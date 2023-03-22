@@ -27,6 +27,9 @@ mqtt_client.configureCredentials(CA_PATH, KEY_PATH, CERT_PATH)
 # Set up the topic and message payload
 topic = 'temperature/humidity'
 message = {}
+print('[INFO] Connecting to AWS IoT Core')
+mqtt_client.connect()
+print('[INFO] Connected to AWS IoT Core')
 
 while True:
     print('Reading the temperature and humidity from the DHT22 sensor')
@@ -46,9 +49,6 @@ while True:
         print("Converted message to JSON format: {}".format(message_json))
 
         # Connect to AWS IoT Core and publish the message
-        print('[INFO] Connecting to AWS IoT Core')
-        mqtt_client.connect()
-        print('[INFO] Connected to AWS IoT Core')
         mqtt_client.publish(topic, message_json, 1)
         print('[INFO] Published message to AWS IoT Core')
         print('[INFO] Disconnected from AWS IoT Core')
