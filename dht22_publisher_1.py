@@ -30,7 +30,6 @@ message = {}
 print('[INFO] Connecting to AWS IoT Core')
 mqtt_client.connect(
     keepAliveIntervalSecond=60,
-    minimumTLSVersion=ssl.PROTOCOL_TLSv1_2,
     timeout=10
 )
 print('[INFO] Connected to AWS IoT Core')
