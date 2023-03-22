@@ -10,6 +10,8 @@ from properties import CA_PATH, CERT_PATH, KEY_PATH, IOT_ENDPOINT, CLIENT_ID
 DHT_SENSOR = Adafruit_DHT.DHT22
 DHT_PIN = 4
 
+print(F"[DEBUG] DHT set to Pin {DHT_PIN} on the Raspberry Pi")
+
 # Set up the AWS IoT Core client
 # client_id = 'my_raspberry_pi'
 # iot_endpoint = 'a38z5cckdkeofh-ats.iot.ap-south-1.amazonaws.com'
@@ -26,9 +28,11 @@ topic = 'temperature/humidity'
 message = {}
 
 while True:
+    print('Reading the temperature and humidity from the DHT22 sensor')
     # Read the temperature and humidity from the DHT22 sensor
     humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
-
+    print('[INFO] Temperature: {:.1f} C'.format(temperature))
+    print('[INFO] Humidity: {:.1f} %'.format(humidity))
     # If the data is valid, add it to the message payload
     if humidity is not None and temperature is not None:
         message['temperature'] = '{:.1f}'.format(temperature)
