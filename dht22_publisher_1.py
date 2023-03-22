@@ -20,6 +20,7 @@ print(F"[DEBUG] DHT set to Pin {DHT_PIN} on the Raspberry Pi")
 # key_path = '/home/niveus/Desktop/IoT-Core/06963ddd98a27ba5c3600c18097c5303c7846dbb785267ec5dfd5f5236cdad31-private.pem.key'
 
 mqtt_client = AWSIoTMQTTClient(CLIENT_ID)
+print(F"[DEBUG] MQTT Client ID: {CLIENT_ID}")
 mqtt_client.configureEndpoint(IOT_ENDPOINT, 8883)
 mqtt_client.configureCredentials(CA_PATH, KEY_PATH, CERT_PATH)
 
