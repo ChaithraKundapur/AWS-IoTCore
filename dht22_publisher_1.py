@@ -46,7 +46,11 @@ while True:
         mqtt_client.publish(topic, message_json, 1)
         mqtt_client.disconnect()
 
-        print('Published message: {}'.format(message_json))
+        print('[INFO] Published message: {}'.format(message_json))
+    else:
+        print('[ERROR] Failed to get reading')
+
+    print('[INFO] Waiting 5 seconds before reading again')
 
     # Wait for 5 seconds before reading again
     time.sleep(5)
