@@ -51,7 +51,6 @@ while True:
         print('[INFO] Connected to AWS IoT Core')
         mqtt_client.publish(topic, message_json, 1)
         print('[INFO] Published message to AWS IoT Core')
-        mqtt_client.disconnect()
         print('[INFO] Disconnected from AWS IoT Core')
 
         print('[INFO] Published message: {}'.format(message_json))
@@ -62,3 +61,4 @@ while True:
 
     # Wait for 5 seconds before reading again
     time.sleep(5)
+    mqtt_client.disconnect()
