@@ -35,11 +35,14 @@ while True:
     print('[INFO] Humidity: {:.1f} %'.format(humidity))
     # If the data is valid, add it to the message payload
     if humidity is not None and temperature is not None:
+        print(
+            '[INFO] Successfully read the temperature and humidity from the DHT22 sensor')
         message['temperature'] = '{:.1f}'.format(temperature)
         message['humidity'] = '{:.1f}'.format(humidity)
 
         # Convert the message to JSON format
         message_json = json.dumps(message)
+        print("Converted message to JSON format: {}".format(message_json))
 
         # Connect to AWS IoT Core and publish the message
         mqtt_client.connect()
