@@ -28,7 +28,11 @@ mqtt_client.configureCredentials(CA_PATH, KEY_PATH, CERT_PATH)
 topic = 'temperature/humidity'
 message = {}
 print('[INFO] Connecting to AWS IoT Core')
-mqtt_client.connect()
+mqtt_client.connect(
+    keepAliveIntervalSecond=60,
+    minimumTLSVersion=ssl.PROTOCOL_TLSv1_2,
+    timeout=10
+)
 print('[INFO] Connected to AWS IoT Core')
 
 while True:
