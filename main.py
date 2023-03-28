@@ -25,7 +25,7 @@ mqtt_client.configureEndpoint(IOT_ENDPOINT, 8883)
 mqtt_client.configureCredentials(CA_PATH, KEY_PATH, CERT_PATH)
 
 # Set up the topic and message payload
-topic = 'temperature/humidity'
+topic = 'temperature_humidity_Alert'
 message = {}
 print('[INFO] Connecting to AWS IoT Core')
 mqtt_client.connect(
