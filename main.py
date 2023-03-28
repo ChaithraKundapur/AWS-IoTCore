@@ -64,3 +64,46 @@ while True:
     # Wait for 5 seconds before reading again
     time.sleep(5)
     mqtt_client.disconnect()
+    
+    
+    
+#-----------------------------------------------------------------------------------------------------------------------------------------
+    
+#import Adafruit_DHT
+#import boto3
+#import time
+#from botocore.exceptions import NoCredentialsError
+
+# AWS IoT Core configuration
+#aws_region = 'your_aws_region'
+#aws_access_key_id = 'your_aws_access_key_id'
+#aws_secret_access_key = 'your_aws_secret_access_key'
+#aws_iot_topic = 'your_aws_iot_topic'
+
+# DHT22 sensor configuration
+#dht22_pin = 4
+#dht22_sensor = Adafruit_DHT.DHT22
+
+# Connect to AWS IoT Core
+#client = boto3.client('iot-data', region_name=aws_region, aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key)
+
+#while True:
+    
+# Read the temperature and humidity data from the DHT22 sensor
+#humidity, temperature = Adafruit_DHT.read_retry(dht22_sensor, dht22_pin)
+
+#if humidity is not None and temperature is not None:
+    
+    # Publish the data to AWS IoT Core
+    #payload = '{{"temperature":{0:0.1f},"humidity":{1:0.1f}}}'.format(temperature, humidity)
+    #try:
+        #response = client.publish(topic=aws_iot_topic, payload=payload)
+        #print('Data published to AWS IoT Core: {}'.format(payload))
+    #except NoCredentialsError as e:
+        #print('AWS credentials not found: {}'.format(e))
+#else:
+    #print('Failed to retrieve data from DHT22 sensor')
+    
+# Wait for 10 seconds before reading the data again
+
+#time.sleep(10)  
