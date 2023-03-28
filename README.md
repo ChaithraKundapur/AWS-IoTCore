@@ -7,7 +7,7 @@
 - sudo apt-get install python3
 - sudo pip3 install Adafruit_DHT
 - python3 -c "import Adafruit_DHT; print(Adafruit_DHT.DHT22)"
-- 
+
 Note : If the library is installed correctly, the output should be 22.
 
 #3 Write a Python script to read the temperature and humidity data from the DHT22 sensor and publish it to AWS IoT Core using the AWS SDK for Python (Boto3).
