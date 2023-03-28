@@ -68,7 +68,46 @@ while True:
     
     
 #-----------------------------------------------------------------------------------------------------------------------------------------
+#from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTClient
+#import Adafruit_DHT
+#import boto3
+
+# AWS IoT Core configuration
+# aws_endpoint = 'your_aws_iot_endpoint'
+# aws_port = 8883
+# aws_root_ca = 'path_to_your_root_ca_file'
+# aws_private_key = 'path_to_your_private_key_file'
+# aws_certificate = 'path_to_your_certificate_file'
+# aws_client_id = 'your_aws_iot_client_id'
+# aws_iot_topic = 'your_aws_iot_topic'
+
+# Connect to AWS IoT Core
+# myMQTTClient = AWSIoTMQTTClient(aws_client_id)
+# myMQTTClient.configureEndpoint(aws_endpoint, aws_port)
+# myMQTTClient.configureCredentials(aws_root_ca, aws_private_key, aws_certificate)
+# myMQTTClient.connect()
+
+# Define the DHT22 sensor pin and type
+# dht22_pin = 4
+# dht22_type = Adafruit_DHT.DHT22
+
+# Define a function to read temperature and humidity data from the DHT22 sensor
+# def read_dht22_data():
+#     humidity, temperature = Adafruit_DHT.read_retry(dht22_type, dht22_pin)
+#     return {'temperature': temperature, 'humidity': humidity}
+
+# Loop to read temperature and humidity data from the sensor and publish it to AWS IoT Core
+# while True:
+#     data = read_dht22_data()
+#     temperature = data['temperature']
+#     humidity = data['humidity']
+#     payload = {'temperature': temperature, 'humidity': humidity}
+#     myMQTTClient.publish(aws_iot_topic, str(payload), 1)
     
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+    
+     
 #import Adafruit_DHT
 #import boto3
 #import time
@@ -106,4 +145,6 @@ while True:
     
 # Wait for 10 seconds before reading the data again
 
-#time.sleep(10)  
+#time.sleep(10)
+
+#-------------------------------------------------------------------------------------------------------------------------------------------------------
