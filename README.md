@@ -11,7 +11,6 @@
 Note : If the library is installed correctly, the output should be 22.
 
 #3 Write a Python script to read the temperature and humidity data from the DHT22 sensor and publish it to AWS IoT Core using the AWS SDK for Python (Boto3).
--
 
 #4 Create an AWS IoT Core Thing for the Raspberry Pi and configure it to receive data from the Python script. You will need to create an AWS IoT Core Thing, attach a certificate, and configure the Raspberry Pi to use the certificate to communicate with AWS IoT Core.
 
